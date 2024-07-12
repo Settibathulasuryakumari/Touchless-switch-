@@ -1,0 +1,31 @@
+int val = 0;
+  int lightON = 0;
+  int pushed = 0;
+
+  void setup() {
+    pinMode(3,OUTPUT);
+    pinMode(4,INPUT);
+  
+} 
+
+  void loop() {
+    delay(100);
+  int val=digitalRead(4);
+
+  if(val == HIGH && lightON == LOW)
+{ 
+  pushed = 1- pushed;
+  delay(100);
+}
+
+lightON = val;
+
+if(pushed == HIGH)
+{
+  digitalWrite(3,HIGH);
+}
+else
+{
+  digitalWrite(3,LOW);
+}
+}
